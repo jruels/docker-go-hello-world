@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_docker_go_hello_world_1698214671806-pr-trigger-input-set
+  identifier: Build_docker_go_hello_world_1698214671806prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: MyFirstProject
+  pipeline:
+    identifier: Build_docker_go_hello_world_1698214671806
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
