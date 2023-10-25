@@ -21,6 +21,7 @@ pipeline:
                   identifier: dockerbuild
                   name: docker_build
                   spec:
+                    connectorRef: account.harnessImage
                     image: plugins/docker
                     settings:
                       dry_run: "true"
@@ -28,6 +29,20 @@ pipeline:
                       tags: latest
                   timeout: ""
                   type: Plugin
+              - stepGroup:
+                  name: Push to Docker Hub
+                  identifier: Push_to_Docker_Hub
+                  steps:
+                    - step:
+                        type: BuildAndPushDockerRegistry
+                        name: BuildAndPushDockerRegistry_1
+                        identifier: BuildAndPushDockerRegistry_1
+                        spec:
+                          connectorRef: account.harnessImage
+                          repo: aslaen/harness-hello-world
+                          tags:
+                            - 0.0.1
+                            - testing
           platform:
             arch: Amd64
             os: Linux
