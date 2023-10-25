@@ -6,9 +6,9 @@ pipeline:
   properties:
     ci:
       codebase:
-        build: <+input>
         connectorRef: account.Github_OAuth_1698212672976
-        repoName: docker-go-hello-world
+        repoName: jruels/docker-go-hello-world
+        build: <+input>
   stages:
     - stage:
         identifier: build
