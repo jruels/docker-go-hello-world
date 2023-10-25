@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_docker_go_hello_world_1698214136967-push-trigger-input-set
+  identifier: Build_docker_go_hello_world_1698214136967pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Testing
+  pipeline:
+    identifier: Build_docker_go_hello_world_1698214136967
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
